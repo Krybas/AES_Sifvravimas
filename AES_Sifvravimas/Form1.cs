@@ -1,17 +1,18 @@
 using AES_Sifvravimas.Clases;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace AES_Sifvravimas
 {
     public partial class Form1 : Form
     {
-
         public Form1()
         {
             InitializeComponent();
         }
 
         Cipher cipher = new Cipher();
+        Files file = new Files();
         private void Encryption()
         {
             string selectedMode = comboBoxMode.SelectedItem?.ToString();
@@ -98,6 +99,16 @@ namespace AES_Sifvravimas
                 return false;
             }
             return true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            file.saveTextFile(txtBoxResult.Text);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

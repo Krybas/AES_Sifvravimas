@@ -69,8 +69,9 @@
             // 
             txtBoxText.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 186);
             txtBoxText.Location = new Point(59, 134);
+            txtBoxText.Multiline = true;
             txtBoxText.Name = "txtBoxText";
-            txtBoxText.Size = new Size(209, 35);
+            txtBoxText.Size = new Size(209, 162);
             txtBoxText.TabIndex = 2;
             // 
             // label3
@@ -78,7 +79,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(32, 81, 159);
-            label3.Location = new Point(59, 317);
+            label3.Location = new Point(59, 444);
             label3.Name = "label3";
             label3.Size = new Size(183, 30);
             label3.TabIndex = 3;
@@ -91,7 +92,7 @@
             txtBoxResult.Multiline = true;
             txtBoxResult.Name = "txtBoxResult";
             txtBoxResult.ReadOnly = true;
-            txtBoxResult.Size = new Size(456, 139);
+            txtBoxResult.Size = new Size(456, 233);
             txtBoxResult.TabIndex = 4;
             // 
             // comboBoxMode
@@ -99,7 +100,7 @@
             comboBoxMode.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 186);
             comboBoxMode.FormattingEnabled = true;
             comboBoxMode.Items.AddRange(new object[] { "ECB", "CBC", "CFB" });
-            comboBoxMode.Location = new Point(59, 350);
+            comboBoxMode.Location = new Point(59, 477);
             comboBoxMode.Name = "comboBoxMode";
             comboBoxMode.Size = new Size(209, 38);
             comboBoxMode.TabIndex = 5;
@@ -119,7 +120,7 @@
             // 
             button1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             button1.ForeColor = Color.FromArgb(32, 81, 159);
-            button1.Location = new Point(59, 406);
+            button1.Location = new Point(59, 533);
             button1.Name = "button1";
             button1.Size = new Size(209, 88);
             button1.TabIndex = 7;
@@ -132,7 +133,7 @@
             comboBox.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 186);
             comboBox.FormattingEnabled = true;
             comboBox.Items.AddRange(new object[] { "Užsifruoti", "Dešifruoti" });
-            comboBox.Location = new Point(59, 276);
+            comboBox.Location = new Point(59, 403);
             comboBox.Name = "comboBox";
             comboBox.Size = new Size(209, 38);
             comboBox.TabIndex = 9;
@@ -142,7 +143,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(32, 81, 159);
-            label5.Location = new Point(59, 243);
+            label5.Location = new Point(59, 370);
             label5.Name = "label5";
             label5.Size = new Size(225, 30);
             label5.TabIndex = 8;
@@ -151,7 +152,7 @@
             // txtBoxKey
             // 
             txtBoxKey.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            txtBoxKey.Location = new Point(59, 205);
+            txtBoxKey.Location = new Point(59, 332);
             txtBoxKey.MaxLength = 16;
             txtBoxKey.Name = "txtBoxKey";
             txtBoxKey.Size = new Size(209, 35);
@@ -162,7 +163,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(32, 81, 159);
-            label6.Location = new Point(59, 172);
+            label6.Location = new Point(59, 299);
             label6.Name = "label6";
             label6.Size = new Size(150, 30);
             label6.TabIndex = 10;
@@ -172,19 +173,20 @@
             // 
             button2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(32, 81, 159);
-            button2.Location = new Point(332, 279);
+            button2.Location = new Point(620, 370);
             button2.Name = "button2";
             button2.Size = new Size(168, 50);
             button2.TabIndex = 12;
             button2.Text = "Išsaugoti failę";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 223, 244);
-            ClientSize = new Size(800, 506);
+            ClientSize = new Size(800, 653);
             Controls.Add(button2);
             Controls.Add(txtBoxKey);
             Controls.Add(label6);
@@ -200,6 +202,7 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
