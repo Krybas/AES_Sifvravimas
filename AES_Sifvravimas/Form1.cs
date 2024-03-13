@@ -13,9 +13,10 @@ namespace AES_Sifvravimas
 
         Cipher cipher = new Cipher();
         Files file = new Files();
+
         private void Encryption()
         {
-            string selectedMode = comboBoxMode.SelectedItem?.ToString();
+            string selectedMode = comboBoxMode.SelectedItem.ToString();
             switch (selectedMode)
             {
                 case "ECB":
@@ -37,10 +38,9 @@ namespace AES_Sifvravimas
             }
 
         }
-        private void Decryption()
+        private void Decryption(string encrypted)
         {
-            string encrypted = txtBoxResult.Text;
-            string selectedMode = comboBoxMode.SelectedItem?.ToString();
+            string selectedMode = comboBoxMode.SelectedItem.ToString();
             switch (selectedMode)
             {
                 case "ECB":
@@ -58,7 +58,6 @@ namespace AES_Sifvravimas
                 default:
                     MessageBox.Show("Nepasirinkote modo");
                     break;
-
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -66,23 +65,19 @@ namespace AES_Sifvravimas
             bool check = chechTextBox();
             if (check)
             {
-                string value = comboBox.SelectedItem?.ToString();
+                string value = comboBox.SelectedItem.ToString();
                 switch (value)
                 {
                     case "Uþsifruoti":
                         Encryption();
                         break;
                     case "Deðifruoti":
-                        Decryption();
+                        Decryption(txtBoxResult.Text);
                         break;
                     default:
                         MessageBox.Show("Nepasirinkote ðifvravimo");
                         break;
                 }
-            }
-            else
-            {
-                check = false;
             }
 
         }
@@ -93,7 +88,7 @@ namespace AES_Sifvravimas
                 MessageBox.Show("Iveskite tekstà");
                 return false;
             }
-            if (txtBoxKey.Text == "" || txtBoxKey.Text.Length < 16)
+            if (txtBoxKey.Text.Length != 16)
             {
                 MessageBox.Show("Iveskite raktà, kurio ilgis 16 simboliø");
                 return false;
@@ -109,6 +104,10 @@ namespace AES_Sifvravimas
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            txtBoxText.Text = file.openTextFile();
         }
     }
 }

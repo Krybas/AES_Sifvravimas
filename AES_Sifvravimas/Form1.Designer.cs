@@ -41,6 +41,7 @@
             txtBoxKey = new TextBox();
             label6 = new Label();
             button2 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -50,16 +51,16 @@
             label1.ForeColor = Color.FromArgb(32, 81, 159);
             label1.Location = new Point(59, 101);
             label1.Name = "label1";
-            label1.Size = new Size(159, 30);
+            label1.Size = new Size(89, 30);
             label1.TabIndex = 0;
-            label1.Text = "Įveskite tekstą:";
+            label1.Text = "Tekstas:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 186);
             label2.ForeColor = Color.FromArgb(32, 81, 159);
-            label2.Location = new Point(162, 46);
+            label2.Location = new Point(291, 35);
             label2.Name = "label2";
             label2.Size = new Size(233, 40);
             label2.TabIndex = 1;
@@ -68,7 +69,7 @@
             // txtBoxText
             // 
             txtBoxText.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            txtBoxText.Location = new Point(59, 134);
+            txtBoxText.Location = new Point(59, 136);
             txtBoxText.Multiline = true;
             txtBoxText.Name = "txtBoxText";
             txtBoxText.Size = new Size(209, 162);
@@ -81,22 +82,23 @@
             label3.ForeColor = Color.FromArgb(32, 81, 159);
             label3.Location = new Point(59, 444);
             label3.Name = "label3";
-            label3.Size = new Size(183, 30);
+            label3.Size = new Size(85, 30);
             label3.TabIndex = 3;
-            label3.Text = "Pasirinkite modą:";
+            label3.Text = "Modas:";
             // 
             // txtBoxResult
             // 
             txtBoxResult.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            txtBoxResult.Location = new Point(332, 134);
+            txtBoxResult.Location = new Point(309, 136);
             txtBoxResult.Multiline = true;
             txtBoxResult.Name = "txtBoxResult";
             txtBoxResult.ReadOnly = true;
-            txtBoxResult.Size = new Size(456, 233);
+            txtBoxResult.Size = new Size(456, 323);
             txtBoxResult.TabIndex = 4;
             // 
             // comboBoxMode
             // 
+            comboBoxMode.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxMode.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 186);
             comboBoxMode.FormattingEnabled = true;
             comboBoxMode.Items.AddRange(new object[] { "ECB", "CBC", "CFB" });
@@ -110,7 +112,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(32, 81, 159);
-            label4.Location = new Point(332, 101);
+            label4.Location = new Point(309, 101);
             label4.Name = "label4";
             label4.Size = new Size(187, 30);
             label4.TabIndex = 6;
@@ -130,6 +132,8 @@
             // 
             // comboBox
             // 
+            comboBox.BackColor = SystemColors.Window;
+            comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 186);
             comboBox.FormattingEnabled = true;
             comboBox.Items.AddRange(new object[] { "Užsifruoti", "Dešifruoti" });
@@ -165,21 +169,33 @@
             label6.ForeColor = Color.FromArgb(32, 81, 159);
             label6.Location = new Point(59, 299);
             label6.Name = "label6";
-            label6.Size = new Size(150, 30);
+            label6.Size = new Size(84, 30);
             label6.TabIndex = 10;
-            label6.Text = "Įveskite raktą:";
+            label6.Text = "Raktas:";
             // 
             // button2
             // 
             button2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
             button2.ForeColor = Color.FromArgb(32, 81, 159);
-            button2.Location = new Point(620, 370);
+            button2.Location = new Point(589, 465);
             button2.Name = "button2";
-            button2.Size = new Size(168, 50);
+            button2.Size = new Size(176, 50);
             button2.TabIndex = 12;
-            button2.Text = "Išsaugoti failę";
+            button2.Text = "Išsaugoti į failą";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+            button3.ForeColor = Color.FromArgb(32, 81, 159);
+            button3.Location = new Point(407, 465);
+            button3.Name = "button3";
+            button3.Size = new Size(176, 50);
+            button3.TabIndex = 13;
+            button3.Text = "Įrašyti iš failo";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // Form1
             // 
@@ -187,6 +203,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 223, 244);
             ClientSize = new Size(800, 653);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(txtBoxKey);
             Controls.Add(label6);
@@ -222,5 +239,6 @@
         private Button button2;
         private ComboBox comboBoxMode;
         private ComboBox comboBox;
+        private Button button3;
     }
 }
